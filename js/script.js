@@ -13,7 +13,7 @@
 
 
 
-computerNum = [];
+pcNum = [];
 userNum = [];
 maxNum = 16;
 userMaxNum = 100 - maxNum;
@@ -23,18 +23,18 @@ function getRandomNum (min,max) {
 }
 
 
-while (computerNum.length < maxNum) {
-    var element = getRandomNum(1,100);
-    if (!computerNum.includes(element)) {
-        computerNum.push(element);
+while (pcNum.length < maxNum) {
+    var numeri = getRandomNum(1,100);
+    if (!pcNum.includes(numeri)) {
+        pcNum.push(numeri);
     }
 }
 
-while (userNum.length < userMaxNum && !computerNum.includes(numero)) {
+while (userNum.length < userMaxNum && !pcNum.includes(numero)) {
     var numero = parseInt(prompt('Inserisci un numero compreso tra 1 e 100'));
     if (numero < 1 || numero > 100) { 
         alert('Il numero deve essere compreso tra 1 e 100');
-    } else if (computerNum.includes(numero)) {
+    } else if (pcNum.includes(numero)) {
         alert('Hai scelto un numero gia scelto dal pc...HAI PERSO!');
     } else if (userNum.includes(numero)) {
         alert('Hai inserito un numero già usato!');
